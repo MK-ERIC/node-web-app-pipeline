@@ -1,0 +1,27 @@
+pipeline {
+    agent any // Runs on any available agent
+
+    stages {
+
+        stage('Build') {
+            steps {
+                echo "Building the project..."
+               // sh 'ls -la'       // Runs a shell command on Linux/macOS
+               bat 'dir'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Running tests..."
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying..."
+            }
+        }
+
+    }
+}
